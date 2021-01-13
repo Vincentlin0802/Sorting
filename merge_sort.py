@@ -1,5 +1,4 @@
 def mergesort(list):
-
     if len(list) <= 1:
         return list
     middle = len(list) // 2
@@ -17,13 +16,13 @@ def mergesort(list):
             p2 += 1
 
     if p1 == len(left):
-         list2.extend(right[p2:])
+        list2.extend(right[p2:])
     else:
-         list2.extend(left[p1:])
+        list2.extend(left[p1:])
 
     return list2
 
 
 if __name__ == '__main__':
-    a = [5,4,3,2,1]
+    a = [5, 4, 3, 2, 1]
     print(mergesort(a))
