@@ -1,14 +1,16 @@
-def insertionsort(list):
-    for i in range(1, len(list)):
+def insertionsort(arr):
+    if len(arr) < 2:
+        return arr
+    for i in range(1, len(arr)):
         j = i - 1
         while j >= 0:
-            if len(list) < 2:
+            if arr[j] > arr[j + 1]:
+               arr[j], arr[j + 1] = arr[j + 1], arr[j]
+            elif arr[j] < arr[j + 1]:
                 break
-            elif list[j] > list[j + 1]:
-                list[j], list[j + 1] = list[j + 1], list[j]
             j -= 1
-    return list
+    return arr
 
 
 if __name__ == '__main__':
-    print(insertionsort([5, 3, 4, 2, 1]))
+    print(insertionsort([1,5,4,2,3]))
