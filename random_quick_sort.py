@@ -12,9 +12,10 @@ def partition(arr,left,right):
         return(l+1)
 
 def quicksort(arr,left, right):
+    if len(arr)<2:
+        return arr
     if left < right:
         k = partition(arr,left,right)
-        print(k)
         (quicksort(arr,left,k-1))
         (quicksort(arr,k+1,right))
         return arr
