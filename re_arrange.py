@@ -1,11 +1,8 @@
 import random
 def rearrange(arr):
-   left = arr[0]
-   right = arr[len(arr)-1]
    for i in range(0,len(arr),1):
-        num = random.randint(left, right)
-        arr.append(num)
-        arr.remove(num)
+        num = random.randint(0, len(arr)-1)
+        arr[i],arr[num] = arr[num], arr[i]
    return arr
 
 if __name__ == '__main__':
