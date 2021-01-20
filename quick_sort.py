@@ -1,3 +1,4 @@
+import random, operator
 def partition(arr,left,right):
     pivot = arr[right]     #把数组的最后一个数当作基准
     for l in range(left-1, len(arr)):
@@ -9,15 +10,15 @@ def partition(arr,left,right):
         return(l+1)
 
 def quicksort(arr,left, right):
+    if len(arr)<2:
+        return arr
     if left < right:
         k = partition(arr,left,right)  #找出中间相等于基准的index
-        print(k)
         (quicksort(arr,left,k-1))   #数组排好的的左边部分继续进行递归
         (quicksort(arr,k+1,right))  #数组排好的右边部分继续进行递归
         return arr
 if __name__ == '__main__':
-     a = [1,5,4,6,2,3]
+     a = [5,4,3,2,1]
      print(quicksort(a,0,len(a)-1))
-
 
 
